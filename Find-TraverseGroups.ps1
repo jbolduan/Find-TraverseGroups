@@ -1,5 +1,22 @@
 ﻿<#
-	TODO: Add comment based help
+	.SYNOPSIS
+		Takes in a path and returns the groups with traverse rights on each folder.
+	
+	.DESCRIPTION
+		The script takes in a path as a string.  It then builds a list of paths to the specific path and checks
+		each of the directories for groups with read rights defined to "this folder only" and then returns an array
+		of groups with an added property for the folder path they exist on.
+
+	.PARAMETER Path
+		A string representing the path you would like to get traverse groups for.
+
+	.EXAMPLE
+		Find-TraverseGroups -Path "\\fileshare\foo\bar"
+
+	.NOTES
+		Created By: Jeff Bolduan
+		Last Updated: 2/24/2016
+		Function: Find-TraverseGroups
 #>
 [CmdletBinding()]
 param(
